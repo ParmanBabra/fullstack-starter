@@ -1,0 +1,1 @@
+export const EXAMPIE_ACTION = "EXAMPIE_ACTION";
