@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { compose } from "redux";
 
+import { withRouter } from "react-router-dom";
+import withAuth from "components/withAuth";
 import logo from 'logo.svg';
 import 'components/App/App.css';
 
@@ -27,4 +29,7 @@ export class App extends Component {
   }
 }
 
-export default App;
+export default compose(
+  withRouter,
+  withAuth
+)(App);
