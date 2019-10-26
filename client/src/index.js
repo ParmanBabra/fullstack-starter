@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import 'bootstrap/dist/css/bootstrap.css';
 import "index.css";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import App from "components/App/App";
 import Login from "components/Login/login";
-import * as serviceWorker from "serviceWorker";
 
-import { Provider } from "react-redux";
-import store from "store";
+import * as serviceWorker from "serviceWorker";
 
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
@@ -17,9 +19,17 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <Provider store={store}>
-      <Login />
-    </Provider>
+      <Router>
+        <Switch>
+          <Route path="/login">
+          <Login />
+          </Route>
+          <Route path="/">
+            <App />
+          </Route>
+        </Switch>
+        
+      </Router>
   </ApolloProvider>,
   document.getElementById("root")
 );

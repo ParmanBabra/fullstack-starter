@@ -1,3 +1,5 @@
+const jwt = require("jwt-simple");
+
 const users = [
   { email: "testing1@testing.com" },
   { email: "testing2@testing.com" },
@@ -16,7 +18,7 @@ module.exports = {
   Mutation: {
     login: async (_, args, context) => {
       const token = await jwt.encode(
-        { email: user.email },
+        { email: args.email },
         process.env.TOKEN_SECRET
       );
 
