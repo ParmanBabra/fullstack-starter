@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { compose } from "redux";
-import { graphql } from "@apollo/react-hoc";
-
-import { EXAMPLE } from "graphqls/index";
 
 import logo from 'logo.svg';
 import 'components/App/App.css';
@@ -30,10 +27,4 @@ export class App extends Component {
   }
 }
 
-export default compose(
-  graphql(EXAMPLE, {
-    options: props => ({
-      
-    })
-  })
-)(App);
+export default App;

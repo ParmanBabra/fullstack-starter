@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "index.css";
 import App from "components/App/App";
+import Login from "components/Login/login";
 import * as serviceWorker from "serviceWorker";
 
 import { Provider } from "react-redux";
@@ -17,7 +18,7 @@ const client = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Provider store={store}>
-      <App />
+      <Login />
     </Provider>
   </ApolloProvider>,
   document.getElementById("root")
