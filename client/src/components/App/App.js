@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { compose } from "redux";
+import { graphql } from "@apollo/react-hoc";
+
+import { EXAMPLE } from "graphqls/index";
+
 import logo from 'logo.svg';
 import 'components/App/App.css';
 
-function App() {
-  return (
-    <div className="App">
+export class App extends Component {
+  render() {
+    return (
+      <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -20,7 +26,14 @@ function App() {
         </a>
       </header>
     </div>
-  );
+    )
+  }
 }
 
-export default App;
+export default compose(
+  graphql(EXAMPLE, {
+    options: props => ({
+      
+    })
+  })
+)(App);
