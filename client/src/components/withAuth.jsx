@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Redirect, hashHistory } from "react-router-dom";
 
 export default WrappedComponent => {
   class withAuth extends Component {
